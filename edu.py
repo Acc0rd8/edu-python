@@ -1,15 +1,6 @@
-from math import e, fabs
+from math import sqrt
 
-def found_y(x):
-    if -5 <= x <= 5:
-        return e ** x
-    elif x < -5:
-        return 2 * fabs(x) - 1
-    else:
-        return 2 * x
+def found_distance(x1, y1, x2, y2):
+    return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-x = int(input('Введите икс от -10 до 10: '))
-if -10 <= x <= 10:
-    print(f'y(x) = {found_y(x)}')
-else:
-    print('Неверный диапазон икс')
+print(found_distance(2, 2, 5, 5))
