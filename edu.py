@@ -1,18 +1,15 @@
-def triangle():
-    for i in range(1, 6):
-        count_spaces = (5 - i) * 2
-        print((5 - i) * ' ', (9 - count_spaces) * '*', (5 - i) * ' ', sep='')
+from math import e, fabs
 
-def rectangle():
-    for i in range(1, 6):
-        if i == 1 or i == 5:
-            print(5 * '*')
-        else:
-            print('*', ' ' * 3, '*', sep='')
+def found_y(x):
+    if -5 <= x <= 5:
+        return e ** x
+    elif x < -5:
+        return 2 * fabs(x) - 1
+    else:
+        return 2 * x
 
-
-num = int(input('Введите число: '))
-if num == 1:
-    triangle()
+x = int(input('Введите икс от -10 до 10: '))
+if -10 <= x <= 10:
+    print(f'y(x) = {found_y(x)}')
 else:
-    rectangle()
+    print('Неверный диапазон икс')
